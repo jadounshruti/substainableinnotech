@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+  <div class="navbar">
+    <div class="logo">
+      <img src="Free_Sample_By_Wix (4).jpg" alt="Logo" width="50">
+    </div>
+    <a href="#aboutUsSection" onclick="scrollToSection('aboutUsSection')">About Us</a>
+    <a href="#location" onclick="openForm('locationForm')">Your Location</a>
+    <a href="#registration" onclick="openForm('registrationForm')">Register/Login</a>
+  </div>
+
+  <div id="locationForm" class="form-container">
+    <h2>Your Location Information</h2>
+    <form>
+      <label for="locationName">Name:</label>
+      <input type="text" id="locationName" name="locationName" required>
+
+      <label for="locationAddress">Address:</label>
+      <input type="text" id="locationAddress" name="locationAddress" required>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div id="registrationForm" class="form-container">
+    <h2>Register or Login</h2>
+    <form id="registerForm">
+      <label for="regUsername">Username:</label>
+      <input type="text" id="regUsername" name="regUsername" required>
+
+      <label for="regPassword">Password:</label>
+      <input type="password" id="regPassword" name="regPassword" required>
+
+      <label for="confirmRegPassword">Confirm Password:</label>
+      <input type="password" id="confirmRegPassword" name="confirmRegPassword" required>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <form id="loginForm" style="display:none;">
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" name="loginUsername" required>
+
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" name="loginPassword" required>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="switch-form">
+      <a href="#" onclick="toggleForms()">Switch to Login</a>
+    </div>
+  </div>
+
+  
+
+  <div class="slideshow-container">
+    <div class="mySlides">
+      <img src="80-sustainable-agricultural-development-Credit-NA-1024x640.jpg" alt="Slide 1">
+    </div>
+    <div class="mySlides">
+      <img src="Sustainable-Farming-Feature-TJ (1).jpg" alt="Slide 2">
+    </div>
+    <div class="mySlides">
+      <img src="Sustainable-Agricultural-Practice-In-India.jpg" alt="Slide 3">
+    </div>
+  </div>
+
+  
+  <div class="flex-container">
+    <div class="flex-box glow" onclick="showSustainableLivelihoodsOptions()">
+      <i class="fas fa-leaf"></i>
+      <h3>Sustainable Livelihoods</h3>
+      <p>Promote organic farming and farmer equipment exchange.</p>
+    </div>
+    <div id="sustainableLivelihoodsOptions" class="form-container" style="display: none;">
+      <h2>Sustainable Livelihoods Options</h2>
+      <div>
+        <button onclick="showEquipmentExchangeForm()">Exchange Equipment</button>
+        <button onclick="showEquipmentRentForm()">Take in Rent</button>
+        <button onclick="showOrganicSolutionChatbot()">Solution in Organic Way</button>
+      </div>
+      <div id="equipmentExchangeForm" style="display: none;">
+        <h3>Equipment Exchange Form</h3>
+       
+        <label for="equipmentType">Equipment Type:</label>
+        <input type="text" id="equipmentType" name="equipmentType" required>
+        <button onclick="searchEquipment()">Search</button>
+      </div>
+      <div id="equipmentRentForm" style="display: none;">
+        <h3>Equipment Rent Form</h3>
+        
+        <label for="rentDuration">Duration (in days):</label>
+        <input type="number" id="rentDuration" name="rentDuration" required>
+        <button onclick="searchEquipment()">Search</button>
+      </div>
+    </div>
+   
+    <div id="organicSolutionChatbot" class="form-container" style="display: none;">
+      <h2>Organic Solution Chatbot</h2>
+      
+    </div>
+    
+    <div class="flex-box glow" onclick="navigateTo('soilConservationPage')">
+      <i class="fas fa-seedling"></i>
+      <h3>Conservation of resource</h3>
+      <p>Exchange organic fertilizers to conserve soil and boost employment.</p>
+    </div>
+    <div class="flex-box glow" onclick="navigateTo('farmerCommunityPage')">
+      <i class="fas fa-users"></i>
+      <h3>Join Farmer Community</h3>
+      <p>Connect with farmers in your area and join the community.</p>
+    </div>
+  </div>
+
+
+
+<div class="about-us-section" id="aboutUsSection">
+  <h2>About Us</h2>
+  <p>We are dedicated to promoting sustainable development  the development without harming the future generation's resourses and increasing reusability in agriculture. Our mission is to foster a community of environmentally-conscious farmers and enthusiasts who strive for:</p>
+  <ul>
+    <li>Implementing eco-friendly farming practices</li>
+    <li>Encouraging the use of renewable resources</li>
+    <li>Facilitating the exchange of sustainable farming techniques</li>
+    <li>Creating a platform for farmers to connect and share their experiences</li>
+    <li>Supporting initiatives that contribute to the well-being of both farmers and the environment</li>
+  </ul>
+  <p>Join us on this journey towards a greener and more sustainable future for agriculture.</p>
+</div>
+
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+     <a href="">sustainable livehoods & preerving natural resourses</a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 shruti kirti singh. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  function openForm(formId) {
+    
+    var forms = document.getElementsByClassName("form-container");
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].style.display = "none";
+    }
+
+   
+    document.getElementById(formId).style.display = "block";
+  }
+
+  function toggleForms() {
+    var registerForm = document.getElementById("registerForm");
+    var loginForm = document.getElementById("loginForm");
+
+    if (registerForm.style.display === "block") {
+      registerForm.style.display = "none";
+      loginForm.style.display = "block";
+    } else {
+      registerForm.style.display = "block";
+      loginForm.style.display = "none";
+    }
+  }
+
+
+ 
+
+
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 5000); 
+  }
+
+  function navigateTo(page) {
+    console.log('Navigating to ' + page);
+  }
+
+  
+  
+
+  function showSustainableLivelihoodsOptions() {
+  document.getElementById('sustainableLivelihoodsOptions').style.display = 'block';
+}
+
+function showEquipmentExchangeForm() {
+  document.getElementById('equipmentExchangeForm').style.display = 'block';
+  document.getElementById('equipmentRentForm').style.display = 'none';
+  document.getElementById('organicSolutionChatbot').style.display = 'none';
+}
+
+function showEquipmentRentForm() {
+  document.getElementById('equipmentExchangeForm').style.display = 'none';
+  document.getElementById('equipmentRentForm').style.display = 'block';
+  document.getElementById('organicSolutionChatbot').style.display = 'none';
+}
+
+function showOrganicSolutionChatbot() {
+  document.getElementById('equipmentExchangeForm').style.display = 'none';
+  document.getElementById('equipmentRentForm').style.display = 'none';
+  document.getElementById('organicSolutionChatbot').style.display = 'block';
+}
+
+function searchEquipment() {
+  
+  console.log('Searching equipment...');
+}
+  
+  
+</script>
+
+    
+</body>
+</html>
